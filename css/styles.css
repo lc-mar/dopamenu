@@ -18,11 +18,11 @@ h1 {
 }
 /* colors: #006E7F #F8CB2E #EE5007 #B22727*/
 /* fonts: 
-    font-family: 'Delius', cursive; */
+    font-family: 'Pangolin', cursive; */
 
 .container {
   background-color: #006e7f;
-  font-family: "Delius", cursive;
+  font-family: 'Pangolin', cursive;
   width: 800px;
   max-width: 80%;
   padding: 20px; 
@@ -40,7 +40,7 @@ h1 {
 .btn {
   background-color: #ee5007;
   border: 4px solid #B22727;
-  font-family: "Delius", cursive;
+  font-family: 'Pangolin', cursive;
   font-size: 2.5rem;
   border-radius: 5px;
   padding: 5px 10px;
