@@ -8,9 +8,19 @@ h1 {
 
 #text {
     font-size: 4rem;
+
 }
 /* colors: #006E7F #F8CB2E #EE5007 #B22727*/
+/* fonts: 
+    font-family: 'Delius', cursive; */
+
 .container {
-    background-color: #ee5007;
-    
+    background-color: #006E7F;
+    font-family: 'Delius', cursive;
+}
+
+.btn {
+    background-color: #EE5007;
+    font-family: 'Delius', cursive;
+    font-size: 2.5rem;
 }
