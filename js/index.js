@@ -80,11 +80,11 @@ const textNodes = [
                 nextText: 8
             },
             {
-                text: '',
+                text: '5 min writing prompt',
                 nextText: 9
             },
             {
-                text: 'do a writing prompt',
+                text: 'learn something',
                 nextText: 10
             }
         ]
@@ -103,11 +103,11 @@ const textNodes = [
             nextText: 12
         },
         {
-            text: '',
+            text: 'BIG tasks',
             nextText: 13
         },
         {
-            text: '',
+            text: 'fun but also BBS',
             nextText: 14
         }
     ]
