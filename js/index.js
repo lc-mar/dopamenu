@@ -41,8 +41,7 @@ function selectOption(option) {
 }
 
 const textNodes = [
-    {
-        id: 1,
+    {id: 1,
         text: 'what\'s the vibe?',
         options: [
             {
@@ -67,8 +66,7 @@ const textNodes = [
             }
         ]
     },
-    {
-        id: 2,
+    {id: 2,
         text: 'itch brain',
         options: [
             {
@@ -90,8 +88,7 @@ const textNodes = [
         ]
 
     },
-    {
-        id: 3,
+    {id: 3,
         text: 'boss bitch shit',
         options: [
         {
@@ -112,33 +109,93 @@ const textNodes = [
         }
     ]
     },
-    {
-        id: 4,
+    {id: 4,
         text: 'more stimmy',
         options: [
         {
             text: 'rolling stones top 500 albums you have left',
-            nextText: 11
+            nextText: 15
         },
         {
-            text: 'playlists that are lauren study approved',
-            nextText: 12
+            text: 'study buddy',
+            nextText: 16
         },
         {
-            text: 'podcasts that are lauren study approved',
-            nextText: 13
+            text: 'cleaning qween',
+            nextText: 17
         },
         {
-            text: 'favorite albums that are lauren approved',
-            nextText: 14
-            },
-        
-        {   text: 'lauren playlist by vibe',
-            nextText: 14
+            text: 'my faves',
+            nextText: 18
         }
     ]
 },
 
+{id: 5,
+    text: 'rainy day',
+    options: [
+    {
+        text: '15 min productive laur',
+        nextText: 19
+    },
+    {
+        text: 'edit these or rewrite them',
+        nextText: 20
+    },
+    {
+        text: 'BIG tasks',
+        nextText: 21
+    },
+    {
+        text: 'fun but also BBS',
+        nextText: 22
+    }
+]
+    },
+    {   id: 6,
+        text: 'treat yo self',
+        options: [
+        {
+            text: '15 min productive laur',
+            nextText: 11
+        },
+        {
+            text: 'edit these or rewrite them',
+            nextText: 12
+        },
+        {
+            text: 'BIG tasks',
+            nextText: 13
+        },
+        {
+            text: 'fun but also BBS',
+            nextText: 14
+        }
+    ]
+    },
+
+    {
+        id: 7,
+        text: 'what kind of quote you looking for?',
+        options: [
+        {
+            text: 'i need to stop being a piece of shit literally this instant',
+            nextText: 23
+        },
+        {
+            text: 'move on ya moody bitch',
+            nextText: 24
+        },
+        {
+            text: 'pretty words',
+            nextText: 25
+        },
+        {
+            text: 'one of your faves',
+            nextText: 26
+        }
+    ]
+    },
     
 ]
 
