@@ -32,12 +32,11 @@ h1 {
 }
 
 .btn-grid {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px; 
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .btn {
