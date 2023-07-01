@@ -7,7 +7,7 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: #F8CB2E;
+    background-color: #ea906c;
 }
 
 h1 {
@@ -16,18 +16,19 @@ h1 {
 #text {
   font-size: 4rem;
 }
-/* colors: #006E7F #F8CB2E #EE5007 #B22727*/
+/* colors: #eee2de #ea906c #b31312 #2b2a4c*/
 /* fonts: 
     font-family: 'Pangolin', cursive; */
 
 .container {
-  background-color: #006e7f;
+  background-color: #2b2a4c;
+  color: #eee2de;
   font-family: 'Pangolin', cursive;
   width: 800px;
   max-width: 80%;
   padding: 20px; 
   border-radius: 5px;
-  box-shadow: 0 0 10px 2px;
+  box-shadow: #F77293 0px 0px 0px 4px, #0EB05C 0px 0px 0px 8px, #7F77EA 0px 0px 0px 12px, #05AEBD 0px 0px 0px 16px, #F7F172 0px 0px 0px 20px;
 }
 
 .btn-grid {
@@ -38,10 +39,12 @@ h1 {
 }
 
 .btn {
-  background-color: #ee5007;
+  background-color: #b31312;
+  color: #eee2de;
   border: 4px solid #B22727;
   font-family: 'Pangolin', cursive;
   font-size: 2.5rem;
   border-radius: 5px;
   padding: 5px 10px;
 }
+box-shadow: #b31312 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
