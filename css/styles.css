@@ -33,10 +33,15 @@ h1 {
 
 .btn-grid {
   display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
+}
+
+.btn-grid-min-two-options {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .btn {
