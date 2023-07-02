@@ -26,6 +26,10 @@ function showTextNode(textNodeIndex) {
 
     })
   
+    if (textNode.options.length % 2 !== 0) {
+      const lastButton = optionButtonsElement.lastChild;
+      lastButton.classList.add('btn-center');
+  }
     
 }
 
