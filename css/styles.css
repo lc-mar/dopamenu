@@ -25,7 +25,11 @@ h1 {
   line-clamp: 2;
 }
 
+
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #2b2a4c;
   color: #eee2de;
   font-family: 'Pangolin', cursive;
@@ -96,12 +100,11 @@ h1 {
 }
 
 .btn-center {
-  grid-column-start: 1;
-  grid-column-end: -1;
+  justify-self: center;
 }
 
 
 @media (max-height: 500px) {
   #text {
     font-size: 2.5rem; 
-}
+}}

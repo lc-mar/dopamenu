@@ -9,28 +9,34 @@ function startGame() {
 }
 
 function showTextNode(textNodeIndex) {
-  const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
+  const textNode = textNodes[textNodeIndex - 1];
   textElement.innerText = textNode.text;
 
   while (optionButtonsElement.firstChild) {
     optionButtonsElement.removeChild(optionButtonsElement.firstChild);
   }
 
-  textNode.options.forEach(option => {
+  const optionCount = textNode.options.length;
+  const centerButton = optionCount % 2 === 1 && optionCount > 1;
+
+  textNode.options.forEach((option, index) => {
     if (showOption(option)) {
       const button = document.createElement('button');
       button.innerText = option.text;
       button.classList.add('btn');
+      if (centerButton && index === optionCount - 1) {
+        button.classList.add('btn-center');
+      }
       button.addEventListener('click', () => selectOption(option));
       optionButtonsElement.appendChild(button);
     }
   });
-
-  if (textNode.options.length % 2 !== 0) {
-    const lastButton = optionButtonsElement.lastChild;
-    lastButton.classList.add('btn-center');
-  }
 }
+
+
+
+
+
 
 function showOption(option) {
   return option.requiredState == null || option.requiredState(state);
