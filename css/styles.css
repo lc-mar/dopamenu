@@ -30,14 +30,17 @@ h1 {
   -webkit-transition: font-size 0.2s ease; 
   line-clamp: 2;
 }
+#text-container {
+  width: 200px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  overflow: hidden;
+}
 
 
 .container {
   display: grid;
-  white-space: none;
   grid-template-columns: auto 50px auto; 
   grid-template-rows: auto;
-  flex-direction: column;
   align-items: center;
   background-color: #2b2a4c;
   color: #eee2de;
