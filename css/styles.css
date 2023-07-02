@@ -14,7 +14,15 @@ h1 {
 }
 
 #text {
-  font-size: 4rem;
+  font-size: 3rem; /* Adjust the initial font size as desired */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  line-height: 1.2;
+  -webkit-transition: font-size 0.2s ease; /* Add a transition effect for font size change */
+  line-clamp: 2; /* Corrected property name */
 }
 
 .container {
@@ -65,6 +73,11 @@ h1 {
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: grid;
+  place-items: center;
+  height: 6rem; /* Adjust the height to your preference */
+  font-size: 1.5rem; /* Adjust the initial font size as desired */
+  line-height: 1.2;
 }
 
 .btn.small-text {
@@ -78,4 +91,11 @@ h1 {
 .btn-center {
   grid-column-start: 1;
   grid-column-end: -1;
+}
+
+/* Add the following media query to adjust font size when needed */
+@media (max-height: 500px) {
+  #text {
+    font-size: 2.5rem; /* Adjust the font size for smaller screens */
+  }
 }

@@ -1,65 +1,50 @@
-const textElement = document.getElementById('text')
-const optionButtonsElement = document.getElementById('option-buttons')
+const textElement = document.getElementById('text');
+const optionButtonsElement = document.getElementById('option-buttons');
 
-let state = {}
+let state = {};
 
 function startGame() {
-    state = {}
-    showTextNode(1)
+  state = {};
+  showTextNode(1);
 }
 
 function showTextNode(textNodeIndex) {
-    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-    textElement.innerText = textNode.text
-    while (optionButtonsElement.firstChild) {
-        optionButtonsElement.removeChild(optionButtonsElement.firstChild)
-    }
+  const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
+  textElement.innerText = textNode.text;
 
-    textNode.options.forEach(option => {
-        if (showOption(option)) {
-            const button = document.createElement('button')
-            button.innerText = option.text
-            button.classList.add('btn')
-            button.addEventListener('click', () => selectOption(option))
-            optionButtonsElement.appendChild(button)
-        }
-    })
+  while (optionButtonsElement.firstChild) {
+    optionButtonsElement.removeChild(optionButtonsElement.firstChild);
+  }
 
-    if (textNode.options.length % 2 !== 0) {
-        const lastButton = optionButtonsElement.lastChild;
-        lastButton.classList.add('btn-center');
+  textNode.options.forEach(option => {
+    if (showOption(option)) {
+      const button = document.createElement('button');
+      button.innerText = option.text;
+      button.classList.add('btn');
+      button.addEventListener('click', () => selectOption(option));
+      optionButtonsElement.appendChild(button);
     }
+  });
+
+  if (textNode.options.length % 2 !== 0) {
+    const lastButton = optionButtonsElement.lastChild;
+    lastButton.classList.add('btn-center');
+  }
 }
-
-const dynamicButton = document.getElementById('dynamic-button');
-
-function adjustFontSize() {
-    const textLength = textElement.innerText.length;
-    if (textLength > 10) {
-        dynamicButton.classList.add('small-text');
-        if (textLength > 15) {
-            dynamicButton.classList.add('smaller-text');
-        }
-    } else {
-        dynamicButton.classList.remove('small-text', 'smaller-text');
-    }
-}
-
-window.addEventListener('DOMContentLoaded', adjustFontSize);
-textElement.addEventListener('input', adjustFontSize);
 
 function showOption(option) {
-    return option.requiredState == null || option.requiredState(state)
+  return option.requiredState == null || option.requiredState(state);
 }
 
 function selectOption(option) {
-    const nextTextNodeId = option.nextText
-    if (nextTextNodeId <= 0) {
-        return startGame()
-    }
-    state = Object.assign(state, option.setState)
-    showTextNode(nextTextNodeId)
+  const nextTextNodeId = option.nextText;
+  if (nextTextNodeId <= 0) {
+    return startGame();
+  }
+  state = Object.assign(state, option.setState);
+  showTextNode(nextTextNodeId);
 }
+
 
 const textNodes = [
     // id 1-10 
