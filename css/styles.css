@@ -15,7 +15,7 @@ h1 {
 
 
 #option-buttons {
-  grid-column: 3; /* Place option-buttons in the third column */
+  grid-column: 3;
 }
 
 #text {
@@ -31,8 +31,8 @@ h1 {
   line-clamp: 2;
 }
 #text-container {
-  width: 200px; /* Adjust the width as needed */
-  height: 50px; /* Adjust the height as needed */
+  width: 200px;
+  height: 200px; 
   overflow: hidden;
 }
 
