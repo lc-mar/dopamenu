@@ -23,15 +23,30 @@ function showTextNode(textNodeIndex) {
             button.addEventListener('click', () => selectOption(option))
             optionButtonsElement.appendChild(button)
         }
-
     })
-  
+
     if (textNode.options.length % 2 !== 0) {
-      const lastButton = optionButtonsElement.lastChild;
-      lastButton.classList.add('btn-center');
-  }
-    
+        const lastButton = optionButtonsElement.lastChild;
+        lastButton.classList.add('btn-center');
+    }
 }
+
+const dynamicButton = document.getElementById('dynamic-button');
+
+function adjustFontSize() {
+    const textLength = textElement.innerText.length;
+    if (textLength > 10) {
+        dynamicButton.classList.add('small-text');
+        if (textLength > 15) {
+            dynamicButton.classList.add('smaller-text');
+        }
+    } else {
+        dynamicButton.classList.remove('small-text', 'smaller-text');
+    }
+}
+
+window.addEventListener('DOMContentLoaded', adjustFontSize);
+textElement.addEventListener('input', adjustFontSize);
 
 function showOption(option) {
     return option.requiredState == null || option.requiredState(state)

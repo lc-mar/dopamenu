@@ -1,13 +1,13 @@
 body {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: #ea906c;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ea906c;
 }
 
 h1 {
@@ -16,9 +16,6 @@ h1 {
 #text {
   font-size: 4rem;
 }
-/* colors: #eee2de #ea906c #b31312 #2b2a4c*/
-/* fonts: 
-    font-family: 'Pangolin', cursive; */
 
 .container {
   background-color: #2b2a4c;
@@ -26,7 +23,7 @@ h1 {
   font-family: 'Pangolin', cursive;
   width: 800px;
   max-width: 80%;
-  padding: 20px; 
+  padding: 20px;
   border-radius: 5px;
   box-shadow: #F77293 0px 0px 0px 4px, #0EB05C 0px 0px 0px 8px, #7F77EA 0px 0px 0px 12px, #05AEBD 0px 0px 0px 16px, #F7F172 0px 0px 0px 20px;
 }
@@ -51,18 +48,34 @@ h1 {
   grid-column-end: -1;
 }
 
-
 .btn {
   background-color: #05AEBD;
   color: #eee2de;
   font-family: 'Pangolin', cursive;
   font-size: 2.5rem;
   border-radius: 5px;
-  font-size: 200%;
   margin: 1rem;
   padding: 5px 10px;
   box-shadow: #F77293 0px 0px 0px 4px, #0EB05C 0px 0px 0px 8px, #F7F172 0px 0px 0px 12px;
   flex: 1 0 200px;
   max-width: 200px;
-  white-space: normal; 
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn.small-text {
+  font-size: 20px;
+}
+
+.btn.smaller-text {
+  font-size: 16px;
+}
+
+.btn-center {
+  grid-column-start: 1;
+  grid-column-end: -1;
 }
