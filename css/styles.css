@@ -65,7 +65,7 @@ h1 {
   grid-column-start: 1;
   grid-column-end: -1;
 }
-.btn:last-child {
+.btn-grid .btn:last-child {
   grid-column: auto; 
   justify-self: center; 
   align-self: center; 
