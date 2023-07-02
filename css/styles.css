@@ -32,7 +32,7 @@ h1 {
   align-items: center;
   background-color: #2b2a4c;
   color: #eee2de;
-  font-family: 'Pangolin', cursive;
+  font-family: 'Josefin Sans', sans-serif;
   width: 800px;
   max-width: 80%;
   padding: 20px;
@@ -74,7 +74,7 @@ h1 {
 .btn {
   background-color: #05AEBD;
   color: #eee2de;
-  font-family: 'Pangolin', cursive;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 2.5rem;
   border-radius: 5px;
   margin: 0;
