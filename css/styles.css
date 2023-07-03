@@ -1,5 +1,4 @@
 body {
-  text-align: center;
   padding: 0;
   margin: 0;
   display: flex;
@@ -28,16 +27,6 @@ h1 {
   word-break: break-word;
   line-height: 1.2;
   -webkit-transition: font-size 0.2s ease; 
-}
-#text-container {
-  width: 200px;
-  height: 200px; 
-  overflow: hidden;
-}
-
-.btn-bottom {
-  justify-self: center;
-  align-self: center;
 }
 
 
@@ -92,12 +81,10 @@ h1 {
   background-color: #05AEBD;
   color: #eee2de;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 2.5rem;
   border-radius: 5px;
   margin: 0;
   padding: 5px 10px;
   box-shadow: #F77293 0px 0px 0px 4px, #0EB05C 0px 0px 0px 8px, #F7F172 0px 0px 0px 12px;
-  flex: 1 0 auto;
   width: 100%;
   white-space: normal;
   display: grid;
@@ -117,12 +104,11 @@ h1 {
 }
 
 .btn-center {
-  justify-self: center;
-  align-self: flex-start; /* Updated */
+  text-align: center;
 }
 
 .btn-bottom {
-  align-self: flex-end; /* Added */
+  align-self: flex-end;
 }
 
 
