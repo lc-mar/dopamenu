@@ -292,6 +292,7 @@ const textNodes = [
           ]
     },
         // id 11-20
+        //might want to make this a generator too but with preset things i update
         {
           id: 11, // Prior id: 3
           text: '15 min productive laur', // Blank text
@@ -314,7 +315,7 @@ const textNodes = [
             }
           ]
   },
-        // need to get generator to work
+        // need to get generator to work and update links
         {
           id: 12, // Prior id: 3
           text: 'edit these or rewrite them', // Blank text
@@ -410,7 +411,7 @@ const textNodes = [
           text: 'rolling stones top 500 albums you have left', // Blank text
           options: [
             {
-              text: 'do the thing! you have to do it!',
+              text: 'get an album and listen to it homie',
               nextText: 47, // Leads to id 47 (end page)
               requiredState: null,
               action: function () {
