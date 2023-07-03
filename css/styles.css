@@ -62,19 +62,12 @@ h1 {
   grid-row: 1;
   display: none;
 }
-.btn-grid::before {
-  visibility: hidden;
-}
 
-.btn-grid::after {
-  visibility: hidden;
-  grid-column: 2;
-}
 
 .btn-grid .btn:last-child {
-  grid-column: auto;
+  grid-column:auto;
   justify-self: center;
-  align-self: center;
+  align-content: center;
 }
 
 .btn {
@@ -101,14 +94,6 @@ h1 {
 
 .btn.smaller-text {
   font-size: 16px;
-}
-
-.btn-center {
-  text-align: center;
-}
-
-.btn-bottom {
-  align-self: flex-end;
 }
 
 
