@@ -54,6 +54,22 @@ function showTextNode(textNodeIndex) {
   });
 }
 
+function editRewriteLink() {
+  var links = [
+    "https://example.com/link1",
+    "https://example.com/link2",
+    "https://example.com/link3",
+    "https://example.com/link4",
+    "https://example.com/link5"
+  ];
+
+  var randomIndex = Math.floor(Math.random() * links.length);
+  var randomLink = links[randomIndex];
+  return randomLink;
+}
+
+var editedLink = editRewriteLink();
+console.log("Edited and rewritten link: " + editedLink);
 
 
 // This function takes an option object as a parameter and checks if the option should be displayed based on the current game state. It returns true if the option should be shown and false otherwise.
@@ -281,22 +297,22 @@ const textNodes = [
         },
         {
           id: 10, // Prior id: 2
-          text: '', // Blank text
+          text: 'learn something', // Blank text
           options: [
             {
-              text: '',
+              text: 'a topic you\'ve wanted to look up',
               nextText: 39 // Leads to id 39
             },
             {
-              text: '',
-              nextText: 40 // Leads to id 40
+              text: 'brain stuffs', // adhd, attachment styles, healthy habits, etc
+              nextText: 40 // Leads to id 40 
             },
             {
-              text: '',
+              text: 'star girl',
               nextText: 41 // Leads to id 41
             },
             {
-              text: '',
+              text: 'coding',
               nextText: 42 // Leads to id 42
             }
           ]
@@ -304,51 +320,55 @@ const textNodes = [
         // id 11-20
         {
           id: 11, // Prior id: 3
-          text: '', // Blank text
+          text: '15 min productive laur', // Blank text
           options: [
             {
-              text: '',
+              text: 'clean',
               nextText: 43 // Leads to id 43
             },
             {
-              text: '',
+              text: 'code',
               nextText: 44 // Leads to id 44
             },
             {
-              text: '',
+              text: 'personal care',
               nextText: 45 // Leads to id 45
             },
             {
-              text: '',
+              text: 'adulting',
               nextText: 46 // Leads to id 46
             }
           ]
         },
         {
           id: 12, // Prior id: 3
-          text: '', // Blank text
+          text: 'edit these or rewrite them', // Blank text
           options: [
             {
               text: '',
-              nextText: 47 // Leads to id 47
-            },
-            {
-              text: '',
-              nextText: 48 // Leads to id 48
-            },
-            {
-              text: '',
-              nextText: 49 // Leads to id 49
-            },
-            {
-              text: '',
-              nextText: 50 // Leads to id 50
+              nextText: 47, // Leads to id 47
+              requiredState: null
             }
-          ]
+          ],
+          editRewriteLink: function() {
+            var links = [
+              "https://example.com/link1",
+              "https://example.com/link2",
+              "https://example.com/link3",
+              "https://example.com/link4",
+              "https://example.com/link5"
+            ];
+          
+            var randomIndex = Math.floor(Math.random() * links.length);
+            var randomLink = links[randomIndex];
+            return randomLink;
+          }
         },
+          
+  
         {
           id: 13, // Prior id: 3
-          text: '', // Blank text
+          text: 'BIG tasks', // Blank text
           options: [
             {
               text: '',
@@ -370,7 +390,7 @@ const textNodes = [
         },
         {
           id: 14, // Prior id: 3
-          text: '', // Blank text
+          text: 'fun but also BBS', // Blank text
           options: [
             {
               text: '',
