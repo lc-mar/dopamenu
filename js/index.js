@@ -374,12 +374,13 @@ const textNodes = [
             return randomLink;
           }
         },
-        {
+  {
+            //need to get generator to work
           id: 14, // Prior id: 3
           text: 'fun but also BBS', // Blank text
           options: [
             {
-              text: '',
+              text: 'be bossy be bitchy but dont be shitty let\'s fucking go',
               nextText: 47, // Leads to id 47 (end page)
               requiredState: null,
               action: function () {
@@ -402,48 +403,48 @@ const textNodes = [
             var randomLink = links[randomIndex];
             return randomLink;
           }
-    },
+  },
+    //need to get generator to work
         {
           id: 15, // Prior id: 4
-          text: '', // Blank text
+          text: 'rolling stones top 500 albums you have left', // Blank text
           options: [
             {
-              text: '',
-              nextText: 59 // Leads to id 59
-            },
-            {
-              text: '',
-              nextText: 60 // Leads to id 60
-            },
-            {
-              text: '',
-              nextText: 61 // Leads to id 61
-            },
-            {
-              text: '',
-              nextText: 62 // Leads to id 62
+              text: 'do the thing! you have to do it!',
+              nextText: 47, // Leads to id 47 (end page)
+              requiredState: null,
+              action: function () {
+                var randomLink = rollingStones();
+                var button = document.getElementById('option-buttons');
+        button.innerHTML = `<a href="${randomLink}">${randomLink}</a>`;
+        button.style.display = 'block';
+              }
             }
-          ]
+          ],
+          rollingStones: function() {
+            var links = [
+              "https://example.com/link1",
+              "https://example.com/link2",
+              "https://example.com/link3",
+              "https://example.com/link4",
+              "https://example.com/link5"
+            ];
+            var randomIndex = Math.floor(Math.random() * links.length);
+            var randomLink = links[randomIndex];
+            return randomLink;
+          }
         },
         {
           id: 16, // Prior id: 4
-          text: '', // Blank text
+          text: 'study buddy', // Blank text
           options: [
             {
-              text: '',
-              nextText: 63 // Leads to id 63
+              text: 'podcast',
+              nextText: 48 // Leads to id 48
             },
             {
-              text: '',
-              nextText: 64 // Leads to id 64
-            },
-            {
-              text: '',
-              nextText: 65 // Leads to id 65
-            },
-            {
-              text: '',
-              nextText: 66 // Leads to id 66
+              text: 'playlist',
+              nextText: 49 // Leads to id 49
             }
           ]
         },
@@ -453,19 +454,19 @@ const textNodes = [
           options: [
             {
               text: '',
-              nextText: 67 // Leads to id 67
+              nextText: 50 // Leads to id 50
             },
             {
               text: '',
-              nextText: 68 // Leads to id 68
+              nextText: 51 // Leads to id 51
             },
             {
               text: '',
-              nextText: 69 // Leads to id 69
+              nextText: 52 // Leads to id 52
             },
             {
               text: '',
-              nextText: 70 // Leads to id 70
+              nextText: 53 // Leads to id 53
             }
           ]
         },
@@ -475,19 +476,19 @@ const textNodes = [
           options: [
             {
               text: '',
-              nextText: 71 // Leads to id 71
+              nextText: 54 // Leads to id 54
             },
             {
               text: '',
-              nextText: 72 // Leads to id 72
+              nextText: 55 // Leads to id 55
             },
             {
               text: '',
-              nextText: 73 // Leads to id 73
+              nextText: 56 // Leads to id 56
             },
             {
               text: '',
-              nextText: 74 // Leads to id 74
+              nextText: 57 // Leads to id 57
             }
           ]
         },
