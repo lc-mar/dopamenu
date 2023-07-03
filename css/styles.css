@@ -20,15 +20,14 @@ h1 {
 
 #text {
   grid-column: 1; 
-  font-size: 3rem; 
+  font-size: 2.5rem;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2; 
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   word-break: break-word;
   line-height: 1.2;
   -webkit-transition: font-size 0.2s ease; 
-  line-clamp: 2;
 }
 #text-container {
   width: 200px;
@@ -45,7 +44,8 @@ h1 {
   background-color: #2b2a4c;
   color: #eee2de;
   font-family: 'Josefin Sans', sans-serif;
-  width: 800px;
+  width: auto;
+  height: 500px;
   max-width: 80%;
   padding: 20px;
   border-radius: 5px;
