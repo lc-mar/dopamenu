@@ -313,14 +313,15 @@ const textNodes = [
               nextText: 46 // Leads to id 46
             }
           ]
-        },
+  },
+        // need to get generator to work
         {
           id: 12, // Prior id: 3
           text: 'edit these or rewrite them', // Blank text
           options: [
             {
-              text: '',
-              nextText: 47, // Leads to id 47
+              text: 'you writing qween click here',
+              nextText: 47, // Leads to id 47 (end page)
               requiredState: null,
               action: function () {
                 var randomLink = editRewriteLink();
@@ -343,28 +344,35 @@ const textNodes = [
             return randomLink;
           }
         },
-          
+          //need to get generator to work
         {
           id: 13, // Prior id: 3
           text: 'BIG tasks', // Blank text
           options: [
             {
-              text: '',
-              nextText: 51 // Leads to id 51
-            },
-            {
-              text: '',
-              nextText: 52 // Leads to id 52
-            },
-            {
-              text: '',
-              nextText: 53 // Leads to id 53
-            },
-            {
-              text: '',
-              nextText: 54 // Leads to id 54
+              text: 'do the thing! you have to do it!',
+              nextText: 47, // Leads to id 47 (end page)
+              requiredState: null,
+              action: function () {
+                var randomLink = bigTasks();
+                var button = document.getElementById('option-buttons');
+        button.innerHTML = `<a href="${randomLink}">${randomLink}</a>`;
+        button.style.display = 'block';
+              }
             }
-          ]
+          ],
+          bigTasks: function() {
+            var links = [
+              "https://example.com/link1",
+              "https://example.com/link2",
+              "https://example.com/link3",
+              "https://example.com/link4",
+              "https://example.com/link5"
+            ];
+            var randomIndex = Math.floor(Math.random() * links.length);
+            var randomLink = links[randomIndex];
+            return randomLink;
+          }
         },
         {
           id: 14, // Prior id: 3
@@ -372,21 +380,28 @@ const textNodes = [
           options: [
             {
               text: '',
-              nextText: 55 // Leads to id 55
-            },
-            {
-              text: '',
-              nextText: 56 // Leads to id 56
-            },
-            {
-              text: '',
-              nextText: 57 // Leads to id 57
-            },
-            {
-              text: '',
-              nextText: 58 // Leads to id 58
+              nextText: 47, // Leads to id 47 (end page)
+              requiredState: null,
+              action: function () {
+                var randomLink = bbs();
+                var button = document.getElementById('option-buttons');
+        button.innerHTML = `<a href="${randomLink}">${randomLink}</a>`;
+        button.style.display = 'block';
+              }
             }
-          ]
+          ],
+          bbs: function() {
+            var links = [
+              "https://example.com/link1",
+              "https://example.com/link2",
+              "https://example.com/link3",
+              "https://example.com/link4",
+              "https://example.com/link5"
+            ];
+            var randomIndex = Math.floor(Math.random() * links.length);
+            var randomLink = links[randomIndex];
+            return randomLink;
+          }
     },
         {
           id: 15, // Prior id: 4
@@ -481,4 +496,4 @@ const textNodes = [
       ];
     
 // This line calls the startGame function to initialize the game when the script is executed.
-startGame()
+startGame();
