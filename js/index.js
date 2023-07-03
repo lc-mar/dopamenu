@@ -19,13 +19,15 @@ function showTextNode(textNodeIndex) {
   const optionCount = textNode.options.length;
   const centerButton = optionCount % 2 === 1 && optionCount > 1;
 
+
   textNode.options.forEach((option, index) => {
     if (showOption(option)) {
       const button = document.createElement('button');
       button.innerText = option.text;
       button.classList.add('btn');
-      if (centerButton && index === optionCount - 1) {
+      if (centerButton && index === Math.floor(optionCount / 2)) {
         button.classList.add('btn-center');
+        button.classList.add('btn-bottom');
       }
       button.addEventListener('click', () => selectOption(option));
       optionButtonsElement.appendChild(button);
