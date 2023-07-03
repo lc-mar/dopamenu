@@ -6,78 +6,52 @@ const optionButtonsElement = document.getElementById('option-buttons');
 
 // This line initializes an empty JavaScript object called state. It is used to keep track of the game state and store any relevant information.
 let state = {};
-
-// This is a function that initializes the game state by resetting the state object and calling the showTextNode function with the index of the first text node (1).
 function startGame() {
   state = {};
   showTextNode(1);
 }
 
-// This function takes a textNodeIndex as a parameter and displays the text and options for the corresponding text node. It updates the textElement with the text content and dynamically creates buttons for each option.
+// This is a function that initializes the game state by resetting the state object and calling the showTextNode function with the index of the first text node (1).
 function showTextNode(textNodeIndex) {
-  //  This line retrieves the text node from the textNodes array based on the given textNodeIndex. The index is adjusted by subtracting 1 because array indices start from 0.
   const textNode = textNodes[textNodeIndex - 1];
-  // This line sets the text content of the textElement to the text property of the current text node. It updates the displayed text in the game.
   textElement.innerText = textNode.text;
 
-  // This while loop removes all child elements from the optionButtonsElement to clear any previously displayed options. It repeatedly removes the first child element until there are no child elements left.
   while (optionButtonsElement.firstChild) {
     optionButtonsElement.removeChild(optionButtonsElement.firstChild);
   }
 
-  // This line calculates the number of available options for the current text node by accessing t
   const optionCount = textNode.options.length;
-  // This line checks if there is an odd number of options (optionCount % 2 === 1) and if there is more than one option (optionCount > 1). It determines whether a button should be centered in the display.
   const centerButton = optionCount % 2 === 1 && optionCount > 1;
 
-// This forEach loop iterates over each option in the options array of the current text node. It executes the provided callback function for each option.
   textNode.options.forEach((option, index) => {
-    // This condition checks if the current option should be shown based on the showOption function. If the condition is true, the code inside the if statement will be executed.
     if (showOption(option)) {
-      //  This line creates a new button element using the document.createElement method. It will represent the option button in the game.
-      const button = document.createElement('button');
-      // This line sets the text content of the button to the text property of the current option.
-      button.innerText = option.text;
-      // This line adds the CSS class 'btn' to the button element. It applies styling to the button, such as defining its appearance.
-      button.classList.add('btn');
-      // This condition checks if the centerButton flag is true (indicating an odd number of options) and if the current option is the last option. If the condition is true, the code inside the if statement will be executed.
-      if (centerButton && index === optionCount - 1) {
-        // This line adds the CSS class 'btn-center' to the button element. It centers the button in the display.
-        button.classList.add('btn-center');
+      if (option.editRewriteLink) {
+        const link = document.createElement('a');
+        link.innerText = option.text;
+        link.classList.add('btn');
+        if (centerButton && index === optionCount - 1) {
+          link.classList.add('btn-center');
+        }
+        link.href = editRewriteLink(); // Assign the generated link to href
+        optionButtonsElement.appendChild(link);
+      } else {
+        const button = document.createElement('button');
+        button.innerText = option.text;
+        button.classList.add('btn');
+        if (centerButton && index === optionCount - 1) {
+          button.classList.add('btn-center');
+        }
+        button.addEventListener('click', () => selectOption(option));
+        optionButtonsElement.appendChild(button);
       }
-      
-// This line adds a click event listener to the button. When the button is clicked, the selectOption function is called with the current option as an argument.
-      button.addEventListener('click', () => selectOption(option));
-      // This line appends the button element as a child to the optionButtonsElement. It adds the button to the display, making it visible to the player.
-      optionButtonsElement.appendChild(button);
     }
   });
 }
 
-function editRewriteLink() {
-  var links = [
-    "https://example.com/link1",
-    "https://example.com/link2",
-    "https://example.com/link3",
-    "https://example.com/link4",
-    "https://example.com/link5"
-  ];
-
-  var randomIndex = Math.floor(Math.random() * links.length);
-  var randomLink = links[randomIndex];
-  return randomLink;
-}
-
-var editedLink = editRewriteLink();
-console.log("Edited and rewritten link: " + editedLink);
-
-
-// This function takes an option object as a parameter and checks if the option should be displayed based on the current game state. It returns true if the option should be shown and false otherwise.
 function showOption(option) {
   return option.requiredState == null || option.requiredState(state);
 }
 
-// This function is called when an option button is clicked. It updates the game state based on the selected option and calls showTextNode with the next text node index to continue the game.
 function selectOption(option) {
   const nextTextNodeId = option.nextText;
   if (nextTextNodeId <= 0) {
@@ -347,7 +321,13 @@ const textNodes = [
             {
               text: '',
               nextText: 47, // Leads to id 47
-              requiredState: null
+              requiredState: null,
+              action: function () {
+                var randomLink = editRewriteLink();
+                var button = document.getElementById('option-buttons');
+        button.innerHTML = `<a href="${randomLink}">${randomLink}</a>`;
+        button.style.display = 'block';
+              }
             }
           ],
           editRewriteLink: function() {
@@ -358,14 +338,12 @@ const textNodes = [
               "https://example.com/link4",
               "https://example.com/link5"
             ];
-          
             var randomIndex = Math.floor(Math.random() * links.length);
             var randomLink = links[randomIndex];
             return randomLink;
           }
         },
           
-  
         {
           id: 13, // Prior id: 3
           text: 'BIG tasks', // Blank text
